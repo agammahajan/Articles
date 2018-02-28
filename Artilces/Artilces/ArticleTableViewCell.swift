@@ -29,11 +29,11 @@ class ArticleTableViewCell: UITableViewCell {
 	func populateData(data: ArticleModel) {
 		articleTitle.text = data.title
 		articleDescription.text = data.description
-		articleLinkButton.titleLabel?.text = data.articleLink
+		articleLinkButton.setTitle(data.articleLink, for: .normal)
 		articleImageView.setImageWithUrl(urlString: data.imageUrl as NSString, placeholderImage: nil)
 	}
 	@IBAction func tapOnLink(_ sender: Any) {
-		guard let text = articleLinkButton.titleLabel?.text as? String else {return}
+		guard let text = articleLinkButton.titleLabel?.text else {return}
 		delegate?.clickOnArticleLink(text)
 	}
 }
