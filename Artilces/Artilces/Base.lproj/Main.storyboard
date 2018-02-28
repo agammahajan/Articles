@@ -90,6 +90,9 @@
                             <outlet property="delegate" destination="Lgn-iP-03O" id="jv8-g7-9QZ"/>
                         </connections>
                     </tableView>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="gcb-0l-dii">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SCk-bK-e5U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

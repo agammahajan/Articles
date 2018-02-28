@@ -29,6 +29,11 @@ class ArticleListTableViewController: UITableViewController, ArticleListDelegate
 		articleViewModel = ArticleListViewModel.initWith(self)
 		articleViewModel.fetchedhResultController.delegate = self
 		articleViewModel.fetchArticles()
+		self.refreshControl?.addTarget(self, action: #selector(refreshData(_:)), for: UIControlEvents.valueChanged)
+	}
+
+	@objc private func refreshData(_ sender: Any) {
+		articleViewModel.fetchArticles()
 	}
 
     // MARK: - Table view data source

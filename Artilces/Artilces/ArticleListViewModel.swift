@@ -32,15 +32,18 @@ class ArticleListViewModel: NSObject {
 			if let data = responseDict, let status:String = data["status"] as? String, status == "ok" {
 				self.clearData()
 				self.traverseArticleData(data: data)
+			} else {
+				self.viewController?.refreshControl?.endRefreshing()
 			}
 		}) { response, responseDict, error in
-
+			self.viewController?.refreshControl?.endRefreshing()
 		}
 	}
 
 	func traverseArticleData(data: [AnyHashable: Any]) {
 		guard let articles = data["articles"] as? [[AnyHashable: Any]]  else {return}
 		self.saveInCoreDataWith(array: articles)
+		self.viewController?.refreshControl?.endRefreshing()
 	}
 
 
