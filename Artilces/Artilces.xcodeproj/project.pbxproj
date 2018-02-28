@@ -16,6 +16,7 @@
 		FAB1D0F220469290001121FC /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1D0F120469290001121FC /* ArticleTableViewCell.swift */; };
 		FAB1D0F420469A74001121FC /* ArticleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1D0F320469A74001121FC /* ArticleListViewModel.swift */; };
 		FAB1D0F620469ED9001121FC /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1D0F520469ED9001121FC /* ArticleModel.swift */; };
+		FAB1D0F82046A00C001121FC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1D0F72046A00C001121FC /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FAB1D0F120469290001121FC /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		FAB1D0F320469A74001121FC /* ArticleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewModel.swift; sourceTree = "<group>"; };
 		FAB1D0F520469ED9001121FC /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
+		FAB1D0F72046A00C001121FC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				FAB1D0F120469290001121FC /* ArticleTableViewCell.swift */,
 				FAB1D0F320469A74001121FC /* ArticleListViewModel.swift */,
 				FAB1D0F520469ED9001121FC /* ArticleModel.swift */,
+				FAB1D0F72046A00C001121FC /* NetworkManager.swift */,
 			);
 			path = Artilces;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 				FAB1D0F220469290001121FC /* ArticleTableViewCell.swift in Sources */,
 				FAB1D0F0204689BA001121FC /* ArticleListTableViewController.swift in Sources */,
 				FAB1D0E3204687C9001121FC /* Artilces.xcdatamodeld in Sources */,
+				FAB1D0F82046A00C001121FC /* NetworkManager.swift in Sources */,
 				FAB1D0DB204687C9001121FC /* AppDelegate.swift in Sources */,
 				FAB1D0F620469ED9001121FC /* ArticleModel.swift in Sources */,
 				FAB1D0F420469A74001121FC /* ArticleListViewModel.swift in Sources */,
