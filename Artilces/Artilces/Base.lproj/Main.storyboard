@@ -54,6 +54,9 @@
                                             <rect key="frame" x="109" y="164.5" width="250" height="55"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <state key="normal" title="https://www.engadget.com/2018/02/27/google-gun-shopping-search-ban-creates-issues/"/>
+                                            <connections>
+                                                <action selector="tapOnLink:" destination="Fa1-F8-dSm" eventType="touchUpInside" id="IRq-wi-aPR"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ArticleListTableViewController: UITableViewController {
+class ArticleListTableViewController: UITableViewController, ArticleListDelegate, ArticleListViewModelDelegate {
 
 	var articleViewModel: ArticleListViewModel!
 
@@ -26,6 +26,7 @@ class ArticleListTableViewController: UITableViewController {
 		self.tableView.estimatedRowHeight = 250
 		self.tableView.rowHeight = UITableViewAutomaticDimension
 		articleViewModel = ArticleListViewModel.initWith(self)
+		articleViewModel.delegate = self
 		articleViewModel.fetchArticles()
 	}
 
@@ -34,16 +35,31 @@ class ArticleListTableViewController: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
-    }
+	}
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return articleViewModel.articleDataSource.count
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell: ArticleTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ArticleTableViewCell", for: indexPath) as! ArticleTableViewCell
+		cell.delegate = self
+		cell.populateData(data: articleViewModel.articleDataSource[indexPath.row])
 		return cell
 	}
+
+	// MARK: - Article Table View Cell delegates
+
+	func clickOnArticleLink(_ link: String) {
+		UIApplication.shared.open(URL(string : link)!, options: [:], completionHandler: nil)
+	}
+
+	// MARK: - Article View Model delegates
+
+	func dataSourceFethced() {
+		self.tableView.reloadData()
+	}
+
 
 }

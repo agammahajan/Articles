@@ -8,16 +8,16 @@
 
 import Foundation
 
-protocol ArticleListDelegate: class {
-	func clickOnArticleLink(_ link: String)
+protocol ArticleListViewModelDelegate: class {
+	func dataSourceFethced()
 }
 
 class ArticleListViewModel {
 
 	weak var viewController: ArticleListTableViewController?
-	weak var delegate: ArticleListDelegate?
+	weak var delegate: ArticleListViewModelDelegate?
 
-	private var articleDataSource: [ArticleModel] = []
+	var articleDataSource: [ArticleModel] = []
 
 	class func initWith(_ viewController: ArticleListTableViewController) -> ArticleListViewModel {
 		let viewModel = ArticleListViewModel()
@@ -42,5 +42,6 @@ class ArticleListViewModel {
 			let article  = ArticleModel.init(data: articles[i] )
 			articleDataSource.append(article)
 		}
+		delegate?.dataSourceFethced()
 	}
 }

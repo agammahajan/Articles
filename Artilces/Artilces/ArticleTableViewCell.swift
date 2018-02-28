@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol ArticleListDelegate: class {
+	func clickOnArticleLink(_ link: String)
+}
+
 class ArticleTableViewCell: UITableViewCell {
+
+	weak var delegate: ArticleListDelegate?
 
 	@IBOutlet weak var articleImageView: UIImageView!
 	@IBOutlet weak var articleTitle: UILabel!
@@ -19,4 +25,15 @@ class ArticleTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+
+	func populateData(data: ArticleModel) {
+		articleTitle.text = data.title
+		articleDescription.text = data.description
+		articleLinkButton.titleLabel?.text = data.articleLink
+		articleImageView.setImageWithUrl(urlString: data.imageUrl as NSString, placeholderImage: nil)
+	}
+	@IBAction func tapOnLink(_ sender: Any) {
+		guard let text = articleLinkButton.titleLabel?.text as? String else {return}
+		delegate?.clickOnArticleLink(text)
+	}
 }
