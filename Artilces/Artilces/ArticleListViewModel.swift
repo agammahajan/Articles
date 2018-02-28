@@ -70,6 +70,7 @@ class ArticleListViewModel: NSObject {
 	var fetchedhResultController: NSFetchedResultsController<NSFetchRequestResult> = {
 		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: Articles.self))
 		fetchRequest.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
+		fetchRequest.fetchBatchSize = 5
 		let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.sharedInstance.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
 		return frc
 	}()
