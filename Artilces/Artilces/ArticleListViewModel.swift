@@ -17,6 +17,8 @@ class ArticleListViewModel {
 	weak var viewController: ArticleListTableViewController?
 	weak var delegate: ArticleListDelegate?
 
+	private var articleDataDource: [String: String] = [:]
+
 	class func initWith(_ viewController: ArticleListTableViewController) -> ArticleListViewModel {
 		let viewModel = ArticleListViewModel()
 		viewModel.viewController = viewController
