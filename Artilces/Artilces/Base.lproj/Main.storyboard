@@ -51,7 +51,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SCg-oj-j0p">
-                                            <rect key="frame" x="109" y="177.5" width="250" height="29"/>
+                                            <rect key="frame" x="109" y="164.5" width="250" height="55"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <state key="normal" title="https://www.engadget.com/2018/02/27/google-gun-shopping-search-ban-creates-issues/"/>
                                         </button>
@@ -62,6 +62,7 @@
                                         <constraint firstItem="xi1-zU-GK0" firstAttribute="top" secondItem="Ka9-Fm-tpC" secondAttribute="top" constant="16" id="4Gf-dd-pIj"/>
                                         <constraint firstItem="H80-oI-tjo" firstAttribute="leading" secondItem="Ka9-Fm-tpC" secondAttribute="leading" constant="16" id="J78-na-EXJ"/>
                                         <constraint firstItem="wAU-PF-5Et" firstAttribute="leading" secondItem="Ka9-Fm-tpC" secondAttribute="leading" constant="16" id="M9S-Af-FNA"/>
+                                        <constraint firstAttribute="bottom" secondItem="SCg-oj-j0p" secondAttribute="bottom" constant="16" id="NiQ-fq-qBR"/>
                                         <constraint firstItem="SCg-oj-j0p" firstAttribute="leading" secondItem="H80-oI-tjo" secondAttribute="trailing" constant="8" id="QmY-B1-FEd"/>
                                         <constraint firstItem="bLL-Ek-bec" firstAttribute="top" secondItem="xi1-zU-GK0" secondAttribute="top" id="U7i-mV-t9Z"/>
                                         <constraint firstItem="SCg-oj-j0p" firstAttribute="centerY" secondItem="H80-oI-tjo" secondAttribute="centerY" id="ZMs-xJ-03a"/>

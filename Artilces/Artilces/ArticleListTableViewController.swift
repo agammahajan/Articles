@@ -12,12 +12,18 @@ class ArticleListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		self.setupViews()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+	func setupViews() {
+		self.tableView.estimatedRowHeight = 250
+		self.tableView.rowHeight = UITableViewAutomaticDimension
+	}
 
     // MARK: - Table view data source
 
