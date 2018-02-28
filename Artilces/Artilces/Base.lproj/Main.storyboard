@@ -1,24 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Lgn-iP-03O">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Article List Table View Controller-->
+        <scene sceneID="rpW-0d-owi">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tableViewController storyboardIdentifier="ArticleListTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Lgn-iP-03O" customClass="ArticleListTableViewController" customModule="Artilces" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ulJ-Ca-RPj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ArticleTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArticleTableViewCell" rowHeight="236" id="Fa1-F8-dSm" customClass="ArticleTableViewCell" customModule="Artilces" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="236"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fa1-F8-dSm" id="Ka9-Fm-tpC">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="235.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xi1-zU-GK0">
+                                            <rect key="frame" x="16" y="16" width="120" height="80"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="80" id="32C-OD-OCd"/>
+                                                <constraint firstAttribute="width" constant="120" id="bma-hX-Rxj"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Google Shopping's 'gun' ban blocked people from buying wine" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLL-Ek-bec">
+                                            <rect key="frame" x="152" y="16" width="215" height="80"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;Google Shopping's ban on 'gun' searches has had some unintended effects -- namely, making it difficult to buy wine." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAU-PF-5Et">
+                                            <rect key="frame" x="16" y="112" width="343" height="50.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More Details:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H80-oI-tjo">
+                                            <rect key="frame" x="16" y="184" width="85.5" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SCg-oj-j0p">
+                                            <rect key="frame" x="109" y="177.5" width="250" height="29"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <state key="normal" title="https://www.engadget.com/2018/02/27/google-gun-shopping-search-ban-creates-issues/"/>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="wAU-PF-5Et" secondAttribute="trailing" constant="16" id="0jg-TO-3kZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="bLL-Ek-bec" secondAttribute="trailing" constant="8" id="1sM-4l-VOh"/>
+                                        <constraint firstItem="xi1-zU-GK0" firstAttribute="top" secondItem="Ka9-Fm-tpC" secondAttribute="top" constant="16" id="4Gf-dd-pIj"/>
+                                        <constraint firstItem="H80-oI-tjo" firstAttribute="leading" secondItem="Ka9-Fm-tpC" secondAttribute="leading" constant="16" id="J78-na-EXJ"/>
+                                        <constraint firstItem="wAU-PF-5Et" firstAttribute="leading" secondItem="Ka9-Fm-tpC" secondAttribute="leading" constant="16" id="M9S-Af-FNA"/>
+                                        <constraint firstItem="SCg-oj-j0p" firstAttribute="leading" secondItem="H80-oI-tjo" secondAttribute="trailing" constant="8" id="QmY-B1-FEd"/>
+                                        <constraint firstItem="bLL-Ek-bec" firstAttribute="top" secondItem="xi1-zU-GK0" secondAttribute="top" id="U7i-mV-t9Z"/>
+                                        <constraint firstItem="SCg-oj-j0p" firstAttribute="centerY" secondItem="H80-oI-tjo" secondAttribute="centerY" id="ZMs-xJ-03a"/>
+                                        <constraint firstItem="bLL-Ek-bec" firstAttribute="bottom" secondItem="xi1-zU-GK0" secondAttribute="bottom" id="ZPH-0N-qbn"/>
+                                        <constraint firstAttribute="trailing" secondItem="SCg-oj-j0p" secondAttribute="trailing" constant="16" id="aSj-eb-irG"/>
+                                        <constraint firstItem="bLL-Ek-bec" firstAttribute="leading" secondItem="xi1-zU-GK0" secondAttribute="trailing" constant="16" id="hQ6-l6-wa3"/>
+                                        <constraint firstItem="wAU-PF-5Et" firstAttribute="top" secondItem="xi1-zU-GK0" secondAttribute="bottom" constant="16" id="lg3-i0-Qtz"/>
+                                        <constraint firstItem="xi1-zU-GK0" firstAttribute="leading" secondItem="Ka9-Fm-tpC" secondAttribute="leading" constant="16" id="lyy-eI-rBr"/>
+                                        <constraint firstItem="H80-oI-tjo" firstAttribute="top" secondItem="wAU-PF-5Et" secondAttribute="bottom" constant="21.5" id="s2g-LS-w1O"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Lgn-iP-03O" id="34a-GJ-NHd"/>
+                            <outlet property="delegate" destination="Lgn-iP-03O" id="jv8-g7-9QZ"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SCk-bK-e5U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="997.60000000000002" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>

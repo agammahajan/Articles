@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		FAB1D0DB204687C9001121FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1D0DA204687C9001121FC /* AppDelegate.swift */; };
-		FAB1D0DD204687C9001121FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1D0DC204687C9001121FC /* ViewController.swift */; };
 		FAB1D0E0204687C9001121FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB1D0DE204687C9001121FC /* Main.storyboard */; };
 		FAB1D0E3204687C9001121FC /* Artilces.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAB1D0E1204687C9001121FC /* Artilces.xcdatamodeld */; };
 		FAB1D0E5204687C9001121FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAB1D0E4204687C9001121FC /* Assets.xcassets */; };
 		FAB1D0E8204687C9001121FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB1D0E6204687C9001121FC /* LaunchScreen.storyboard */; };
+		FAB1D0F0204689BA001121FC /* ArticleListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1D0EF204689BA001121FC /* ArticleListTableViewController.swift */; };
+		FAB1D0F220469290001121FC /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1D0F120469290001121FC /* ArticleTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FAB1D0D7204687C9001121FC /* Artilces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Artilces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB1D0DA204687C9001121FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FAB1D0DC204687C9001121FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FAB1D0DF204687C9001121FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAB1D0E2204687C9001121FC /* Artilces.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Artilces.xcdatamodel; sourceTree = "<group>"; };
 		FAB1D0E4204687C9001121FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAB1D0E7204687C9001121FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAB1D0E9204687C9001121FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAB1D0EF204689BA001121FC /* ArticleListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListTableViewController.swift; sourceTree = "<group>"; };
+		FAB1D0F120469290001121FC /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,12 +59,13 @@
 			isa = PBXGroup;
 			children = (
 				FAB1D0DA204687C9001121FC /* AppDelegate.swift */,
-				FAB1D0DC204687C9001121FC /* ViewController.swift */,
 				FAB1D0DE204687C9001121FC /* Main.storyboard */,
 				FAB1D0E4204687C9001121FC /* Assets.xcassets */,
 				FAB1D0E6204687C9001121FC /* LaunchScreen.storyboard */,
 				FAB1D0E9204687C9001121FC /* Info.plist */,
 				FAB1D0E1204687C9001121FC /* Artilces.xcdatamodeld */,
+				FAB1D0EF204689BA001121FC /* ArticleListTableViewController.swift */,
+				FAB1D0F120469290001121FC /* ArticleTableViewCell.swift */,
 			);
 			path = Artilces;
 			sourceTree = "<group>";
@@ -139,8 +142,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAB1D0F220469290001121FC /* ArticleTableViewCell.swift in Sources */,
+				FAB1D0F0204689BA001121FC /* ArticleListTableViewController.swift in Sources */,
 				FAB1D0E3204687C9001121FC /* Artilces.xcdatamodeld in Sources */,
-				FAB1D0DD204687C9001121FC /* ViewController.swift in Sources */,
 				FAB1D0DB204687C9001121FC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
