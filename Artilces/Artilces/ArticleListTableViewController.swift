@@ -26,6 +26,7 @@ class ArticleListTableViewController: UITableViewController {
 		self.tableView.estimatedRowHeight = 250
 		self.tableView.rowHeight = UITableViewAutomaticDimension
 		articleViewModel = ArticleListViewModel.initWith(self)
+		articleViewModel.fetchArticles()
 	}
 
     // MARK: - Table view data source
