@@ -49,6 +49,11 @@ class ArticleListTableViewController: UITableViewController, ArticleListDelegate
 		return cell
 	}
 
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		self.tableView.deselectRow(at: indexPath, animated: true)
+		clickOnArticleLink(articleViewModel.articleDataSource[indexPath.row].articleLink)
+	}
+
 	// MARK: - Article Table View Cell delegates
 
 	func clickOnArticleLink(_ link: String) {
