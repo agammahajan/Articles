@@ -14,6 +14,7 @@
 		FAB1D0E8204687C9001121FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB1D0E6204687C9001121FC /* LaunchScreen.storyboard */; };
 		FAB1D0F0204689BA001121FC /* ArticleListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1D0EF204689BA001121FC /* ArticleListTableViewController.swift */; };
 		FAB1D0F220469290001121FC /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1D0F120469290001121FC /* ArticleTableViewCell.swift */; };
+		FAB1D0F420469A74001121FC /* ArticleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1D0F320469A74001121FC /* ArticleListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		FAB1D0E9204687C9001121FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAB1D0EF204689BA001121FC /* ArticleListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListTableViewController.swift; sourceTree = "<group>"; };
 		FAB1D0F120469290001121FC /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
+		FAB1D0F320469A74001121FC /* ArticleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				FAB1D0E1204687C9001121FC /* Artilces.xcdatamodeld */,
 				FAB1D0EF204689BA001121FC /* ArticleListTableViewController.swift */,
 				FAB1D0F120469290001121FC /* ArticleTableViewCell.swift */,
+				FAB1D0F320469A74001121FC /* ArticleListViewModel.swift */,
 			);
 			path = Artilces;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 				FAB1D0F0204689BA001121FC /* ArticleListTableViewController.swift in Sources */,
 				FAB1D0E3204687C9001121FC /* Artilces.xcdatamodeld in Sources */,
 				FAB1D0DB204687C9001121FC /* AppDelegate.swift in Sources */,
+				FAB1D0F420469A74001121FC /* ArticleListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

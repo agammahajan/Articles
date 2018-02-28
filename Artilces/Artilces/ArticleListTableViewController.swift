@@ -10,6 +10,8 @@ import UIKit
 
 class ArticleListTableViewController: UITableViewController {
 
+	var articleViewModel: ArticleListViewModel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 		self.setupViews()
@@ -23,6 +25,7 @@ class ArticleListTableViewController: UITableViewController {
 	func setupViews() {
 		self.tableView.estimatedRowHeight = 250
 		self.tableView.rowHeight = UITableViewAutomaticDimension
+		articleViewModel = ArticleListViewModel.initWith(self)
 	}
 
     // MARK: - Table view data source
