@@ -11,7 +11,9 @@ import CoreData
 
 class CoreDataStack: NSObject {
 
-	// MARK: - Core Data stack
+	static let sharedInstance = CoreDataStack()
+	
+	private override init() {}
 
 	lazy var persistentContainer: NSPersistentContainer = {
 		/*
@@ -53,6 +55,12 @@ class CoreDataStack: NSObject {
 				let nserror = error as NSError
 				fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
 			}
+		}
+	}
+
+	func applicationDocumentsDirectory() {
+		if let url = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask).last {
+			print(url.absoluteString)
 		}
 	}
 	

@@ -27,6 +27,12 @@ class ArticleListTableViewController: UITableViewController, ArticleListDelegate
 		self.tableView.rowHeight = UITableViewAutomaticDimension
 		articleViewModel = ArticleListViewModel.initWith(self)
 		articleViewModel.delegate = self
+		do {
+			try articleViewModel.fetchedhResultController.performFetch()
+			print("COUNT FETCHED FIRST: \(String(describing: articleViewModel.fetchedhResultController.sections?[0].numberOfObjects))")
+		} catch let error  {
+			print("ERROR: \(error)")
+		}
 		articleViewModel.fetchArticles()
 	}
 
@@ -39,13 +45,19 @@ class ArticleListTableViewController: UITableViewController, ArticleListDelegate
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return articleViewModel.articleDataSource.count
+		if let count = articleViewModel.fetchedhResultController.sections?.first?.numberOfObjects {
+			return count
+		}
+		return 0
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell: ArticleTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ArticleTableViewCell", for: indexPath) as! ArticleTableViewCell
 		cell.delegate = self
-		cell.populateData(data: articleViewModel.articleDataSource[indexPath.row])
+		if let article = articleViewModel.fetchedhResultController.object(at: indexPath) as? Articles {
+			cell.populateData(data: article)
+		}
+//		cell.populateData(data: articleViewModel.articleDataSource[indexPath.row])
 		return cell
 	}
 
