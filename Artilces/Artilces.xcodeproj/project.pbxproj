@@ -18,6 +18,9 @@
 		FAB1D0F620469ED9001121FC /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1D0F520469ED9001121FC /* ArticleModel.swift */; };
 		FAB1D0F82046A00C001121FC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1D0F72046A00C001121FC /* NetworkManager.swift */; };
 		FAB1D0FA2046A0F3001121FC /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1D0F92046A0F3001121FC /* ImageCache.swift */; };
+		FAB1D10F20472F55001121FC /* Articles+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1D10D20472F54001121FC /* Articles+CoreDataClass.swift */; };
+		FAB1D11020472F55001121FC /* Articles+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1D10E20472F54001121FC /* Articles+CoreDataProperties.swift */; };
+		FAB1D11220473069001121FC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1D11120473069001121FC /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		FAB1D0F520469ED9001121FC /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
 		FAB1D0F72046A00C001121FC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FAB1D0F92046A0F3001121FC /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		FAB1D10D20472F54001121FC /* Articles+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Articles+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FAB1D10E20472F54001121FC /* Articles+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Articles+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FAB1D11120473069001121FC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,7 @@
 		FAB1D0D9204687C9001121FC /* Artilces */ = {
 			isa = PBXGroup;
 			children = (
+				FAB1D10C20472F54001121FC /* CoreData */,
 				FAB1D0DA204687C9001121FC /* AppDelegate.swift */,
 				FAB1D0DE204687C9001121FC /* Main.storyboard */,
 				FAB1D0E4204687C9001121FC /* Assets.xcassets */,
@@ -80,6 +87,16 @@
 				FAB1D0F92046A0F3001121FC /* ImageCache.swift */,
 			);
 			path = Artilces;
+			sourceTree = "<group>";
+		};
+		FAB1D10C20472F54001121FC /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FAB1D10D20472F54001121FC /* Articles+CoreDataClass.swift */,
+				FAB1D10E20472F54001121FC /* Articles+CoreDataProperties.swift */,
+				FAB1D11120473069001121FC /* CoreDataStack.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,10 +172,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAB1D0F220469290001121FC /* ArticleTableViewCell.swift in Sources */,
+				FAB1D10F20472F55001121FC /* Articles+CoreDataClass.swift in Sources */,
 				FAB1D0F0204689BA001121FC /* ArticleListTableViewController.swift in Sources */,
 				FAB1D0FA2046A0F3001121FC /* ImageCache.swift in Sources */,
 				FAB1D0E3204687C9001121FC /* Artilces.xcdatamodeld in Sources */,
 				FAB1D0F82046A00C001121FC /* NetworkManager.swift in Sources */,
+				FAB1D11220473069001121FC /* CoreDataStack.swift in Sources */,
+				FAB1D11020472F55001121FC /* Articles+CoreDataProperties.swift in Sources */,
 				FAB1D0DB204687C9001121FC /* AppDelegate.swift in Sources */,
 				FAB1D0F620469ED9001121FC /* ArticleModel.swift in Sources */,
 				FAB1D0F420469A74001121FC /* ArticleListViewModel.swift in Sources */,
@@ -235,7 +255,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -286,7 +306,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -301,6 +321,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 36UJV9NZ5X;
 				INFOPLIST_FILE = Artilces/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = agam.Artilces;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -316,6 +337,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 36UJV9NZ5X;
 				INFOPLIST_FILE = Artilces/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = agam.Artilces;
 				PRODUCT_NAME = "$(TARGET_NAME)";

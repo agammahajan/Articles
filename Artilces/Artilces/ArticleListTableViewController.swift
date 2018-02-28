@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreData
 
-class ArticleListTableViewController: UITableViewController, ArticleListDelegate, ArticleListViewModelDelegate {
+class ArticleListTableViewController: UITableViewController, ArticleListDelegate {
 
 	var articleViewModel: ArticleListViewModel!
 
@@ -26,7 +27,12 @@ class ArticleListTableViewController: UITableViewController, ArticleListDelegate
 		self.tableView.estimatedRowHeight = 250
 		self.tableView.rowHeight = UITableViewAutomaticDimension
 		articleViewModel = ArticleListViewModel.initWith(self)
-		articleViewModel.delegate = self
+		articleViewModel.fetchedhResultController.delegate = self
+		articleViewModel.fetchArticles()
+		self.refreshControl?.addTarget(self, action: #selector(refreshData(_:)), for: UIControlEvents.valueChanged)
+	}
+
+	@objc private func refreshData(_ sender: Any) {
 		articleViewModel.fetchArticles()
 	}
 
@@ -39,19 +45,27 @@ class ArticleListTableViewController: UITableViewController, ArticleListDelegate
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return articleViewModel.articleDataSource.count
+		if let count = articleViewModel.fetchedhResultController.sections?.first?.numberOfObjects {
+			return count
+		}
+		return 0
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell: ArticleTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ArticleTableViewCell", for: indexPath) as! ArticleTableViewCell
 		cell.delegate = self
-		cell.populateData(data: articleViewModel.articleDataSource[indexPath.row])
+		if let article = articleViewModel.fetchedhResultController.object(at: indexPath) as? Articles {
+			cell.populateData(data: article)
+		}
 		return cell
 	}
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		self.tableView.deselectRow(at: indexPath, animated: true)
-		clickOnArticleLink(articleViewModel.articleDataSource[indexPath.row].articleLink)
+		if let article = articleViewModel.fetchedhResultController.object(at: indexPath) as? Articles, let link = article.link {
+			clickOnArticleLink(link)
+		}
+
 	}
 
 	// MARK: - Article Table View Cell delegates
@@ -60,9 +74,25 @@ class ArticleListTableViewController: UITableViewController, ArticleListDelegate
 		UIApplication.shared.open(URL(string : link)!, options: [:], completionHandler: nil)
 	}
 
-	// MARK: - Article View Model delegates
+}
 
-	func dataSourceFethced() {
-		self.tableView.reloadData()
+extension ArticleListTableViewController: NSFetchedResultsControllerDelegate {
+
+	func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+		switch type {
+		case .insert:
+			self.tableView.insertRows(at: [newIndexPath!], with: .automatic)
+		case .delete:
+			self.tableView.deleteRows(at: [indexPath!], with: .automatic)
+		default:
+			break
+		}
+	}
+	func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+		self.tableView.endUpdates()
+	}
+
+	func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+		self.tableView.beginUpdates()
 	}
 }

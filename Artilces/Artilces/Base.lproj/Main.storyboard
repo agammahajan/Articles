@@ -25,7 +25,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="235.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xi1-zU-GK0">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xi1-zU-GK0">
                                             <rect key="frame" x="16" y="16" width="120" height="80"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="80" id="32C-OD-OCd"/>
@@ -90,6 +90,9 @@
                             <outlet property="delegate" destination="Lgn-iP-03O" id="jv8-g7-9QZ"/>
                         </connections>
                     </tableView>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="gcb-0l-dii">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SCk-bK-e5U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
