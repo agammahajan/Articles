@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ArticleListTableViewController: UITableViewController, ArticleListDelegate, ArticleListViewModelDelegate {
+class ArticleListTableViewController: UITableViewController, ArticleListDelegate {
 
 	var articleViewModel: ArticleListViewModel!
 
@@ -26,13 +26,6 @@ class ArticleListTableViewController: UITableViewController, ArticleListDelegate
 		self.tableView.estimatedRowHeight = 250
 		self.tableView.rowHeight = UITableViewAutomaticDimension
 		articleViewModel = ArticleListViewModel.initWith(self)
-		articleViewModel.delegate = self
-		do {
-			try articleViewModel.fetchedhResultController.performFetch()
-			print("COUNT FETCHED FIRST: \(String(describing: articleViewModel.fetchedhResultController.sections?[0].numberOfObjects))")
-		} catch let error  {
-			print("ERROR: \(error)")
-		}
 		articleViewModel.fetchArticles()
 	}
 
@@ -57,13 +50,15 @@ class ArticleListTableViewController: UITableViewController, ArticleListDelegate
 		if let article = articleViewModel.fetchedhResultController.object(at: indexPath) as? Articles {
 			cell.populateData(data: article)
 		}
-//		cell.populateData(data: articleViewModel.articleDataSource[indexPath.row])
 		return cell
 	}
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		self.tableView.deselectRow(at: indexPath, animated: true)
-		clickOnArticleLink(articleViewModel.articleDataSource[indexPath.row].articleLink)
+		if let article = articleViewModel.fetchedhResultController.object(at: indexPath) as? Articles, let link = article.link {
+			clickOnArticleLink(link)
+		}
+
 	}
 
 	// MARK: - Article Table View Cell delegates
@@ -72,9 +67,4 @@ class ArticleListTableViewController: UITableViewController, ArticleListDelegate
 		UIApplication.shared.open(URL(string : link)!, options: [:], completionHandler: nil)
 	}
 
-	// MARK: - Article View Model delegates
-
-	func dataSourceFethced() {
-		self.tableView.reloadData()
-	}
 }

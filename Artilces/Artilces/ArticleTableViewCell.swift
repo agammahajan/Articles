@@ -30,7 +30,9 @@ class ArticleTableViewCell: UITableViewCell {
 		articleTitle.text = data.title
 		articleDescription.text = data.articleDescription
 		articleLinkButton.setTitle(data.link, for: .normal)
-		articleImageView.setImageWithUrl(urlString: data.imageUrl! as NSString, placeholderImage: nil)
+		if let imageUrl = data.imageUrl {
+			articleImageView.setImageWithUrl(urlString: imageUrl as NSString, placeholderImage: nil)
+		}
 	}
 	@IBAction func tapOnLink(_ sender: Any) {
 		guard let text = articleLinkButton.titleLabel?.text else {return}
