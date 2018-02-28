@@ -9,11 +9,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Article List Table View Controller-->
+        <!--Article List-->
         <scene sceneID="rpW-0d-owi">
             <objects>
-                <tableViewController storyboardIdentifier="ArticleListTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Lgn-iP-03O" customClass="ArticleListTableViewController" customModule="Artilces" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ulJ-Ca-RPj">
+                <tableViewController storyboardIdentifier="ArticleListTableViewController" title="Article List" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Lgn-iP-03O" customClass="ArticleListTableViewController" customModule="Artilces" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ulJ-Ca-RPj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -73,6 +73,12 @@
                                         <constraint firstItem="H80-oI-tjo" firstAttribute="top" secondItem="wAU-PF-5Et" secondAttribute="bottom" constant="21.5" id="s2g-LS-w1O"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="articleDescription" destination="wAU-PF-5Et" id="P8s-My-Drf"/>
+                                    <outlet property="articleImageView" destination="xi1-zU-GK0" id="gru-hV-Y8X"/>
+                                    <outlet property="articleLinkButton" destination="SCg-oj-j0p" id="FNw-wZ-Xwl"/>
+                                    <outlet property="articleTitle" destination="bLL-Ek-bec" id="lXc-dg-t64"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
