@@ -60,6 +60,4 @@ class ArticleListTableViewController: UITableViewController, ArticleListDelegate
 	func dataSourceFethced() {
 		self.tableView.reloadData()
 	}
-
-
 }
