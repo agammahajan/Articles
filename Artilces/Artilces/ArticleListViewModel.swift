@@ -30,7 +30,7 @@ class ArticleListViewModel: NSObject {
 		let url = "https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=a8fabd9ff4234c82aad08eaaa4ea17a0"
 		NetworkManager.sharedInstance.get(urlString: url, success: { response, responseDict in
 			if let data = responseDict, let status:String = data["status"] as? String, status == "ok" {
-//				self.clearData()
+				self.clearData()
 				self.traverseArticleData(data: data)
 			}
 		}) { response, responseDict, error in
@@ -88,25 +88,4 @@ class ArticleListViewModel: NSObject {
 		}
 	}
 
-}
-
-extension ArticleListViewModel: NSFetchedResultsControllerDelegate {
-
-	func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-		switch type {
-		case .insert:
-			self.viewController?.tableView.insertRows(at: [newIndexPath!], with: .automatic)
-		case .delete:
-			self.viewController?.tableView.deleteRows(at: [indexPath!], with: .automatic)
-		default:
-			break
-		}
-	}
-	func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-		self.viewController?.tableView.endUpdates()
-	}
-
-	func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-		self.viewController?.tableView.beginUpdates()
-	}
 }
