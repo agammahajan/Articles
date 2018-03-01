@@ -70,11 +70,12 @@ class ArticleListViewModel: NSObject {
 		}
 	}
 
-	var fetchedhResultController: NSFetchedResultsController<NSFetchRequestResult> = {
+	lazy var fetchedhResultController: NSFetchedResultsController<NSFetchRequestResult> = {
 		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: Articles.self))
 		fetchRequest.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
 		fetchRequest.fetchBatchSize = 5
 		let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.sharedInstance.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+		frc.delegate = self
 		return frc
 	}()
 
@@ -92,4 +93,25 @@ class ArticleListViewModel: NSObject {
 		}
 	}
 
+}
+
+extension ArticleListViewModel: NSFetchedResultsControllerDelegate {
+
+	func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+		switch type {
+		case .insert:
+			self.viewController?.tableView.insertRows(at: [newIndexPath!], with: .automatic)
+		case .delete:
+			self.viewController?.tableView.deleteRows(at: [indexPath!], with: .automatic)
+		default:
+			break
+		}
+	}
+	func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+		self.viewController?.tableView.endUpdates()
+	}
+
+	func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+		self.viewController?.tableView.beginUpdates()
+	}
 }
